@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+</head>
+<body>
+    <div id="attendance" class="admin-section">
+        <h2>Attendance Management</h2>
+        <form id="attendanceForm" class="admin-form">
+            <input type="text" id="studentName" placeholder="Student Name" required>
+            <input type="date" id="attendanceDate" required>
+            <select id="attendanceStatus">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            <button type="submit">Add Attendance</button>
+        </form>
+        <!-- Attendance Data Table -->
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

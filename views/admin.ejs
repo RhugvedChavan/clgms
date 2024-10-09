@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System - Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="admin.js"></script>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Admin Panel</h2>
+        </div>
+        
+        <ul class="sidebar-nav">
+            <li><button onclick="showSection('dashboard')">Dashboard</button></li>
+            <li>
+                <a href="/admin/manage-student">
+                    <button>Manage student</button>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/manage-faculty">
+                    <button>Manage faculty</button>
+                </a>
+            </li>
+            <li>
+                <a href="/manage-courses">
+                    <button>Manage courses</button>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/assignments">
+                    <button>Assignments</button>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/Attendance">
+                    <button>Attendance</button>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/Announcement">
+                    <button>Announcement</button>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/Manage-fees">
+                    <button>Manage fees</button>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="content-section active">
+            <h2>Dashboard</h2>
+            <p>Welcome to the admin panel.</p>
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <div class="stat-info">
+                        <h3>Students</h3>
+                        <p>1,200</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <div class="stat-info">
+                        <h3>Faculty</h3>
+                        <p>85</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <div class="stat-info">
+                        <h3>Courses</h3>
+                        <p>35</p>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <h3>New Applications</h3>
+                <p>15</p>
+                <span class="change up">+8%</span>
+                <p class="subtext">Submitted this week</p>
+            </div>
+        
+            <!-- Financial Overview Widget -->
+            <div class="widget">
+                <h3>Financial Overview</h3>
+                <p>$1.2M</p>
+                <span class="change up">+3%</span>
+                <p class="subtext">Revenue from fees</p>
+        </div>
+        <section class="notifications">
+            <h2>Notifications</h2>
+            <ul class="notification-list">
+                <li class="notification-item">New application received from <strong>Mr.Shreyash Gaikwad</strong>.</li>
+                <li class="notification-item">Course <strong>Law</strong> has been updated.</li>
+                <li class="notification-item">Upcoming exam scheduled on <strong>October 15, 2024</strong>.</li>
+            </ul>
+            <button class="btn-view-all">View All</button>
+        </section>
+        
+        </div>
+
+        <!-- Manage Students Section -->
+        <div id="students" class="admin-section" style="display:none;">
+            <h2>Manage Students</h2>
+            <form id="studentForm" class="admin-form">
+                <input type="text" id="studentNameManage" placeholder="Student Name" required>
+                <input type="email" id="studentEmail" placeholder="Student Email" required>
+                <input type="email" id="studentEmail" placeholder="Course" required>
+                <input type="number" id="studentRoll" placeholder="Roll Number" required>
+                <button type="submit">Add Student</button>
+            </form>
+            <!-- Students Data Table -->
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Course</th>
+                        <th>Student Id</th>
+                        <th>Roll Number</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Manage Faculty Section -->
+        <div id="faculty" class="admin-section" style="display:none;">
+            <h2>Manage Faculty</h2>
+            <form id="facultyForm" class="admin-form">
+                <input type="text" id="facultyName" placeholder="Faculty Name" required>
+                <input type="email" id="facultyEmail" placeholder="Faculty Email" required>
+                <input type="text" id="facultyDepartment" placeholder="Department" required>
+                <button type="submit">Add Faculty</button>
+            </form>
+            <!-- Faculty Data Table -->
+            <table id="facultyTable">
+                <thead>
+                    <tr>
+                        <th>Faculty Name</th>
+                        <th>Faculty Id</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Manage Courses Section -->
+        <div id="courses" class="admin-section" style="display:none;">
+            <h2>Manage Courses</h2>
+            <form id="courseForm" class="admin-form">
+                <input type="text" id="courseTitle" placeholder="Course Name" required>
+                <textarea id="courseDescription" placeholder="Description" required></textarea>
+                <button type="submit">Add Course</button>
+            </form>
+            <!-- Courses Data Table -->
+            <table id="courseTable">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <!-- Attendance Management Section -->
+        <div id="attendance" class="admin-section">
+            <h2>Attendance Management</h2>
+            <form id="attendanceForm" class="admin-form">
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <input type="date" id="attendanceDate" required>
+                <select id="attendanceStatus">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select>
+                <button type="submit">Add Attendance</button>
+            </form>
+            <!-- Attendance Data Table -->
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Fees Management Section -->
+        <div id="fees" class="admin-section" style="display:none;">
+            <h2>Fees Management</h2>
+            <form id="feesForm" class="admin-form">
+                <input type="text" id="studentNameFees" placeholder="Student Name" required>
+                <input type="number" id="feesAmount" placeholder="Fees Amount" required>
+                <select id="feesStatus">
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                </select>
+                <button type="submit">Add Fees Record</button>
+            </form>
+            <!-- Fees Data Table -->
+            <table id="feesTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th> Student Id</th>
+                        <th>Fees Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+
+        <!-- Announcements Section -->
+        <div id="announcements" class="admin-section" style="display:none;">
+            <h2>Manage Announcements</h2>
+            <form id="announcementForm" class="admin-form">
+                <input type="text" id="announcementTitle" placeholder="Title" required>
+                <textarea id="announcementDetails" placeholder="Details" required></textarea>
+                <button type="submit">Add Announcement</button>
+            </form>
+            <!-- Announcements Data Table -->
+            <table id="announcementTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Details</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Assignments Section -->
+        <div id="assignments" class="admin-section" style="display:none;">
+            <h2>Manage Assignments</h2>
+            <form id="assignmentForm" class="admin-form">
+                <input type="text" id="assignmentTitle" placeholder="Assignment Title" required>
+                <textarea id="assignmentDetails" placeholder="Details" required></textarea>
+                <input type="date" id="assignmentDueDate" required>
+                <button type="submit">Add Assignment</button>
+            </form>
+            <!-- Assignments Data Table -->
+            <table id="assignmentTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Details</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage students</title>
+</head>
+<body>
+    <div id="students" class="admin-section" style="display:none;">
+        <h2>Manage Students</h2>
+        <form id="studentForm" class="admin-form">
+            <input type="text" id="studentNameManage" placeholder="Student Name" required>
+            <input type="email" id="studentEmail" placeholder="Student Email" required>
+            <input type="email" id="studentEmail" placeholder="Course" required>
+            <input type="number" id="studentRoll" placeholder="Roll Number" required>
+            <button type="submit">Add Student</button>
+        </form>
+        <!-- Students Data Table -->
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Student Id</th>
+                    <th>Roll Number</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+</body>
+
+</html>

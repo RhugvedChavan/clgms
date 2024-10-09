@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage fees</title>
+</head>
+<body>
+    <div id="fees" class="admin-section" style="display:none;">
+        <h2>Fees Management</h2>
+        <form id="feesForm" class="admin-form">
+            <input type="text" id="studentNameFees" placeholder="Student Name" required>
+            <input type="number" id="feesAmount" placeholder="Fees Amount" required>
+            <select id="feesStatus">
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+            </select>
+            <button type="submit">Add Fees Record</button>
+        </form>
+        <!-- Fees Data Table -->
+        <table id="feesTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th> Student Id</th>
+                    <th>Fees Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+</html>

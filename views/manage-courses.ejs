@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage-courses</title>
+</head>
+<body>
+    <div id="courses" class="admin-section" style="display:none;">
+        <h2>Manage Courses</h2>
+        <form id="courseForm" class="admin-form">
+            <input type="text" id="courseTitle" placeholder="Course Name" required>
+            <textarea id="courseDescription" placeholder="Description" required></textarea>
+            <button type="submit">Add Course</button>
+        </form>
+        <!-- Courses Data Table -->
+        <table id="courseTable">
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>

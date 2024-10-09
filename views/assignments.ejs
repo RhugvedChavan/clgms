@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+</head>
+<body>
+    <div id="assignments" class="admin-section" style="display:none;">
+        <h2>Manage Assignments</h2>
+        <form id="assignmentForm" class="admin-form">
+            <input type="text" id="assignmentTitle" placeholder="Assignment Title" required>
+            <textarea id="assignmentDetails" placeholder="Details" required></textarea>
+            <input type="date" id="assignmentDueDate" required>
+            <button type="submit">Add Assignment</button>
+        </form>
+        <!-- Assignments Data Table -->
+        <table id="assignmentTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Details</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+</html>

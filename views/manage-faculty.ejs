@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage faculty</title>
+</head>
+<body>
+    <div id="faculty" class="admin-section" style="display:none;">
+        <h2>Manage Faculty</h2>
+        <form id="facultyForm" class="admin-form">
+            <input type="text" id="facultyName" placeholder="Faculty Name" required>
+            <input type="email" id="facultyEmail" placeholder="Faculty Email" required>
+            <input type="text" id="facultyDepartment" placeholder="Department" required>
+            <button type="submit">Add Faculty</button>
+        </form>
+        <!-- Faculty Data Table -->
+        <table id="facultyTable">
+            <thead>
+                <tr>
+                    <th>Faculty Name</th>
+                    <th>Faculty Id</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>
